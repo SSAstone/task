@@ -99,14 +99,7 @@ class _ReferralBoardingState extends State<ReferralBoarding> {
                       // Your existing content...
                       PrimaryBtn(
                         title: 'Continue',
-                        onTopPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Password(),
-                            ),
-                          );
-                        },
+                        onTopPressed: () => Get.to(Password()),
                       ),
                       SizedBox(height: 20),
                       PrimaryBtn(

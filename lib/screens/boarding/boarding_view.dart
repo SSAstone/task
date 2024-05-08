@@ -35,6 +35,8 @@ class _BoardingViewState extends State<BoardingView> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+
     return Scaffold(
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: 30),
@@ -99,9 +101,9 @@ class _BoardingViewState extends State<BoardingView> {
                 ],
               ),
               Container(
-                height: 500,
+                height: size.height * 0.5,
                 margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.only(top: 300),
+                padding: EdgeInsets.only(top: size.height * 0.28),
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("assets/images/image_2.png"),
@@ -128,7 +130,7 @@ class _BoardingViewState extends State<BoardingView> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(bottom: 120),
+                padding: EdgeInsets.only(bottom: size.height * 0.1),
                 child: PrimaryBtn(
                   title: 'Continue',
                   onTopPressed: () => Get.to(() => Boarding_2()),

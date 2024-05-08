@@ -35,6 +35,8 @@ class _Boarding_3State extends State<Boarding_3> {
 
   @override
   Widget build(BuildContext context) {
+        final size = MediaQuery.sizeOf(context);
+
     return Scaffold(
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: 30),
@@ -46,7 +48,7 @@ class _Boarding_3State extends State<Boarding_3> {
               Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 80, bottom: 20),
+                    margin: EdgeInsets.only(top: size.height * 0.08, bottom: size.height * 0.01),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -99,7 +101,7 @@ class _Boarding_3State extends State<Boarding_3> {
                 ],
               ),
               Container(
-                height: 500,
+                height: size.height * 0.65,
                 // padding: EdgeInsets.only(top: 300),
                 // decoration: const BoxDecoration(
                 //   image: DecorationImage(
@@ -111,15 +113,15 @@ class _Boarding_3State extends State<Boarding_3> {
                 child: Column(
                   children: [
                     Image.asset("assets/images/Group_2.png"),
-                    Text(
+                    const Text(
                       "Welcome to\n Fundify!",
                       style: TextStyle(color: Colors.white, fontSize: 32),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
-                      height: 20,
+                      height: size.height * 0.01,
                     ),
-                    Text(
+                    const Text(
                       "Empower your finances and earn rewards with every smart move.",
                       style: TextStyle(color: Colors.white, fontSize: 16),
                       textAlign: TextAlign.center,
@@ -128,19 +130,13 @@ class _Boarding_3State extends State<Boarding_3> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(bottom: 50),
+                padding: EdgeInsets.only(bottom: size.height * 0.05),
                 child: Column(
                   children: [
                     PrimaryBtn(
                       title: 'Continue',
-                      onTopPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ReferralBoarding(),
-                          ),
-                        );
-                      },
+                      onTopPressed: () => Get.to(() => ReferralBoarding()),
+                      
                     ),
                     SizedBox(height: 20),
                     PrimaryBtn(

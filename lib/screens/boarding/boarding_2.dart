@@ -35,6 +35,8 @@ class _Boarding_2State extends State<Boarding_2> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+
     return Scaffold(
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: 30),
@@ -99,7 +101,7 @@ class _Boarding_2State extends State<Boarding_2> {
                 ],
               ),
               Container(
-                height: 500,
+                height: size.height * 0.6,
                 margin: EdgeInsets.only(top: 10),
                 // padding: EdgeInsets.only(top: 300),
                 // decoration: const BoxDecoration(
@@ -111,11 +113,11 @@ class _Boarding_2State extends State<Boarding_2> {
                 // width: double.infinity,
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 30,
-                    ),
+                    // const SizedBox(
+                    //   height: 30,
+                    // ),
                     Image.asset("assets/images/Group.png"),
-                    Text(
+                    const Text(
                       "Welcome to\n Fundify!",
                       style: TextStyle(color: Colors.white, fontSize: 32),
                       textAlign: TextAlign.center,
@@ -123,7 +125,7 @@ class _Boarding_2State extends State<Boarding_2> {
                     SizedBox(
                       height: 20,
                     ),
-                    Text(
+                    const Text(
                       "Empower your finances and earn rewards with every smart move.",
                       style: TextStyle(color: Colors.white, fontSize: 16),
                       textAlign: TextAlign.center,
@@ -137,14 +139,7 @@ class _Boarding_2State extends State<Boarding_2> {
                   children: [
                     PrimaryBtn(
                       title: 'Continue',
-                      onTopPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Boarding_3(),
-                          ),
-                        );
-                      },
+                      onTopPressed: () => Get.to(() => Boarding_3()),
                     ),
                     SizedBox(height: 20),
                     PrimaryBtn(
