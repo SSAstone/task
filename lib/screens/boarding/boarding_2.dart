@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mobile_app/screens/boarding/boarding_3.dart';
 import 'package:mobile_app/utitls/colors.dart';
@@ -39,7 +38,7 @@ class _Boarding_2State extends State<Boarding_2> {
 
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 30),
+        margin: const EdgeInsets.symmetric(horizontal: 30),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -48,7 +47,7 @@ class _Boarding_2State extends State<Boarding_2> {
               Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 80, bottom: 20),
+                    margin: const EdgeInsets.only(top: 80, bottom: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -65,7 +64,7 @@ class _Boarding_2State extends State<Boarding_2> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         SizedBox(
                           width: 30,
                           height: 3,
@@ -76,7 +75,7 @@ class _Boarding_2State extends State<Boarding_2> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         SizedBox(
                           width: 30,
                           height: 3,
@@ -102,7 +101,7 @@ class _Boarding_2State extends State<Boarding_2> {
               ),
               Container(
                 height: size.height * 0.6,
-                margin: EdgeInsets.only(top: 10),
+                margin: const EdgeInsets.only(top: 10),
                 // padding: EdgeInsets.only(top: 300),
                 // decoration: const BoxDecoration(
                 //   image: DecorationImage(
@@ -122,7 +121,7 @@ class _Boarding_2State extends State<Boarding_2> {
                       style: TextStyle(color: Colors.white, fontSize: 32),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     const Text(
@@ -134,14 +133,14 @@ class _Boarding_2State extends State<Boarding_2> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(bottom: 50),
+                padding: const EdgeInsets.only(bottom: 50),
                 child: Column(
                   children: [
                     PrimaryBtn(
                       title: 'Continue',
-                      onTopPressed: () => Get.to(() => Boarding_3()),
+                      onTopPressed: () => Get.to(() => const Boarding_3()),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     PrimaryBtn(
                       title: 'Back',
                       onTopPressed: () => Get.back(),

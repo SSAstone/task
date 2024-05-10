@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mobile_app/screens/home/balance_card.dart';
 import 'package:mobile_app/screens/home/profile.dart';
 import 'package:mobile_app/utitls/colors.dart';
@@ -32,7 +30,7 @@ class _HomeState extends State<Home> {
                   color: AppColors.darkColor,
                   child: Container(
                     margin: const EdgeInsets.symmetric(horizontal: 30),
-                    padding: EdgeInsets.only(top: 150),
+                    padding: const EdgeInsets.only(top: 150),
                     child: Column(
                       children: [
                         Container(
@@ -48,7 +46,7 @@ class _HomeState extends State<Home> {
                           child: BalanceTabBtn(),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 20),
+                          margin: const EdgeInsets.only(top: 20),
                           child: const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.end,
@@ -141,14 +139,14 @@ class _HomeState extends State<Home> {
                         //     ],
                         //   ),
                         // ),
-                        Container(
+                        SizedBox(
                           height: MediaQuery.of(context).size.height * 0.2795,
                           child: ListView.builder(
                             itemCount: 5,
                             itemBuilder: (context, index) => Column(
                               children: [
                                 Container(
-                                  margin: EdgeInsets.symmetric(vertical: 20),
+                                  margin: const EdgeInsets.symmetric(vertical: 20),
                                   child: const Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,

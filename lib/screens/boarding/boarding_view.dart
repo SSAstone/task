@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mobile_app/screens/boarding/boarding_2.dart';
 import 'package:mobile_app/utitls/colors.dart';
@@ -39,7 +38,7 @@ class _BoardingViewState extends State<BoardingView> {
 
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 30),
+        margin: const EdgeInsets.symmetric(horizontal: 30),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -48,7 +47,7 @@ class _BoardingViewState extends State<BoardingView> {
               Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 80, bottom: 20),
+                    margin: const EdgeInsets.only(top: 80, bottom: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -62,7 +61,7 @@ class _BoardingViewState extends State<BoardingView> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         SizedBox(
                           width: 30,
                           height: 3,
@@ -76,7 +75,7 @@ class _BoardingViewState extends State<BoardingView> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         SizedBox(
                           width: 30,
                           height: 3,
@@ -102,7 +101,7 @@ class _BoardingViewState extends State<BoardingView> {
               ),
               Container(
                 height: size.height * 0.5,
-                margin: EdgeInsets.only(top: 10),
+                margin: const EdgeInsets.only(top: 10),
                 padding: EdgeInsets.only(top: size.height * 0.28),
                 decoration: const BoxDecoration(
                   image: DecorationImage(
@@ -133,7 +132,7 @@ class _BoardingViewState extends State<BoardingView> {
                 padding: EdgeInsets.only(bottom: size.height * 0.1),
                 child: PrimaryBtn(
                   title: 'Continue',
-                  onTopPressed: () => Get.to(() => Boarding_2()),
+                  onTopPressed: () => Get.to(() => const Boarding_2()),
                 ),
               )
             ],

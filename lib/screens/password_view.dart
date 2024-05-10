@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mobile_app/screens/home/home_view.dart';
 import 'package:mobile_app/utitls/colors.dart';
 import 'package:mobile_app/widget/btn/primary_btn.dart';
@@ -46,13 +45,13 @@ class _PasswordState extends State<Password> {
     return Scaffold(
       backgroundColor: AppColors.lightColor,
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 30),
+        margin: const EdgeInsets.symmetric(horizontal: 30),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 64,),
+              const SizedBox(height: 64,),
               Image.asset(
                 "assets/images/Vector_2.png",
                 height: 28,
@@ -75,7 +74,7 @@ class _PasswordState extends State<Password> {
               GridView.count(
                 crossAxisCount: 3,
                 shrinkWrap: true,
-                padding: EdgeInsets.all(30),
+                padding: const EdgeInsets.all(30),
                 mainAxisSpacing: 10.0,
                 crossAxisSpacing: 10.0,
                 children: List.generate(
@@ -84,7 +83,7 @@ class _PasswordState extends State<Password> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only( top: 10, bottom: 50),
+                padding: const EdgeInsets.only( top: 10, bottom: 50),
                 child: Column(
                   children: [
                     PrimaryBtn(
@@ -93,7 +92,7 @@ class _PasswordState extends State<Password> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HomeView(),
+                            builder: (context) => const HomeView(),
                           ),
                         );
                       },
@@ -102,7 +101,7 @@ class _PasswordState extends State<Password> {
                         'textColor': AppColors.lightColor,
                       }
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     PrimaryBtn(
                       title: 'Forgot Pin?',
                       onTopPressed: () => {},

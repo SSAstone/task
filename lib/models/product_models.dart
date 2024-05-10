@@ -42,20 +42,20 @@ class ProductModel {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['status'] = status;
-    _data['message'] = message;
-    _data['totalDocs'] = totalDocs;
-    _data['docs'] = docs.map((e)=>e.toJson()).toList();
-    _data['limit'] = limit;
-    _data['page'] = page;
-    _data['nextPage'] = nextPage;
-    _data['prevPage'] = prevPage;
-    _data['totalPages'] = totalPages;
-    _data['pagingCounter'] = pagingCounter;
-    _data['meta'] = meta;
-    _data['success'] = success;
-    return _data;
+    final data = <String, dynamic>{};
+    data['status'] = status;
+    data['message'] = message;
+    data['totalDocs'] = totalDocs;
+    data['docs'] = docs.map((e)=>e.toJson()).toList();
+    data['limit'] = limit;
+    data['page'] = page;
+    data['nextPage'] = nextPage;
+    data['prevPage'] = prevPage;
+    data['totalPages'] = totalPages;
+    data['pagingCounter'] = pagingCounter;
+    data['meta'] = meta;
+    data['success'] = success;
+    return data;
   }
 }
 
@@ -85,14 +85,14 @@ class Docs {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['_id'] = id;
-    _data['name'] = name;
-    _data['description'] = description;
-    _data['price'] = price;
-    _data['image'] = image;
-    _data['category'] = category.toJson();
-    return _data;
+    final data = <String, dynamic>{};
+    data['_id'] = id;
+    data['name'] = name;
+    data['description'] = description;
+    data['price'] = price;
+    data['image'] = image;
+    data['category'] = category.toJson();
+    return data;
   }
 }
 
@@ -114,10 +114,10 @@ class Category {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['_id'] = id;
-    _data['name'] = name;
-    _data['image'] = image;
-    return _data;
+    final data = <String, dynamic>{};
+    data['_id'] = id;
+    data['name'] = name;
+    data['image'] = image;
+    return data;
   }
 }

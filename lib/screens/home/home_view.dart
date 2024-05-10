@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mobile_app/screens/home/home.dart';
 import 'package:mobile_app/utitls/colors.dart';
 

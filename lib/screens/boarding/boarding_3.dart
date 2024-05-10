@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mobile_app/screens/boarding/referral_boarding.dart';
 import 'package:mobile_app/utitls/colors.dart';
@@ -39,7 +38,7 @@ class _Boarding_3State extends State<Boarding_3> {
 
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 30),
+        margin: const EdgeInsets.symmetric(horizontal: 30),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,7 +64,7 @@ class _Boarding_3State extends State<Boarding_3> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         SizedBox(
                           width: 30,
                           height: 3,
@@ -79,7 +78,7 @@ class _Boarding_3State extends State<Boarding_3> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         SizedBox(
                           width: 30,
                           height: 3,
@@ -100,7 +99,7 @@ class _Boarding_3State extends State<Boarding_3> {
                   ),
                 ],
               ),
-              Container(
+              SizedBox(
                 height: size.height * 0.65,
                 // padding: EdgeInsets.only(top: 300),
                 // decoration: const BoxDecoration(
@@ -135,10 +134,10 @@ class _Boarding_3State extends State<Boarding_3> {
                   children: [
                     PrimaryBtn(
                       title: 'Continue',
-                      onTopPressed: () => Get.to(() => ReferralBoarding()),
+                      onTopPressed: () => Get.to(() => const ReferralBoarding()),
                       
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     PrimaryBtn(
                       title: 'Back',
                       onTopPressed: () => Get.back(),

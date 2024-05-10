@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mobile_app/screens/password_view.dart';
 import 'package:mobile_app/utitls/colors.dart';
 import 'package:mobile_app/widget/btn/primary_btn.dart';
 
 class ReferralBoarding extends StatefulWidget {
-  const ReferralBoarding({Key? key}) : super(key: key);
+  const ReferralBoarding({super.key});
 
   @override
   State<ReferralBoarding> createState() => _ReferralBoardingState();
@@ -20,7 +19,7 @@ class _ReferralBoardingState extends State<ReferralBoarding> {
       body: SingleChildScrollView(
         // Wrap the Scaffold's body with SingleChildScrollView
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 30),
+          margin: const EdgeInsets.symmetric(horizontal: 30),
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -30,7 +29,7 @@ class _ReferralBoardingState extends State<ReferralBoarding> {
                 Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(top: 80, bottom: 20),
+                      margin: const EdgeInsets.only(top: 80, bottom: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -54,17 +53,17 @@ class _ReferralBoardingState extends State<ReferralBoarding> {
                     ),
                   ],
                 ),
-                Container(
+                SizedBox(
                   height: 500,
                   child: Column(
                     children: [
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       const Text(
                         "Let’s Get You Started",
                         style: TextStyle(color: Colors.white, fontSize: 32),
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       const Text(
@@ -72,17 +71,17 @@ class _ReferralBoardingState extends State<ReferralBoarding> {
                         style: TextStyle(color: Colors.white, fontSize: 16),
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 35,
                       ),
                       TextFormField(
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Color(0xFF1A1A1A),
+                          fillColor: const Color(0xFF1A1A1A),
                           labelText: 'Referral code',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: AppColors.secondaryColor,
                               width: 1,
                             ),
@@ -93,15 +92,15 @@ class _ReferralBoardingState extends State<ReferralBoarding> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(bottom: 50),
+                  padding: const EdgeInsets.only(bottom: 50),
                   child: Column(
                     children: [
                       // Your existing content...
                       PrimaryBtn(
                         title: 'Continue',
-                        onTopPressed: () => Get.to(Password()),
+                        onTopPressed: () => Get.to(const Password()),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       PrimaryBtn(
                         title: 'Skip',
                         onTopPressed: () => Get.back(),

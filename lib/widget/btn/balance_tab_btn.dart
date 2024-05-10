@@ -34,7 +34,7 @@ Widget BalanceTabBtn() {
       Container(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
         child: InkWell(
-          onTap: () => Get.to(() => TransferView()), 
+          onTap: () => Get.to(() => const TransferView()), 
           child: const Row(
             children: [
               Icon(

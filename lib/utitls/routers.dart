@@ -8,7 +8,7 @@ class Routers {
   static const String home = '/';
 
   static List<GetPage> routers = [
-    GetPage(name: home, page: () => HomeView()),
+    GetPage(name: home, page: () => const HomeView()),
     GetPage(name: Transfer, page: () => const TransferView()),
   ];
 }

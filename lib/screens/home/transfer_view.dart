@@ -14,7 +14,7 @@ class _TransferViewState extends State<TransferView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Transfer Page',
             style: TextStyle(
                 fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
@@ -22,14 +22,14 @@ class _TransferViewState extends State<TransferView> {
           centerTitle: true,
           leading: IconButton(
             onPressed: () => Get.back(),
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.white,
             ),
           ),
           backgroundColor: AppColors.darkColor,
         ),
-        body: Center(
+        body: const Center(
           child: Text(
             'Transfer Page',
             style: TextStyle(

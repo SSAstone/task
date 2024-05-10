@@ -5,9 +5,9 @@ Widget BalanceCard() {
     children: [
       Container(
         margin: const EdgeInsets.symmetric(horizontal: 30),
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Color(0xFF1A1A1A),
+          color: const Color(0xFF1A1A1A),
           borderRadius: BorderRadius.circular(10),
         ),
         width: double.infinity,
@@ -46,9 +46,9 @@ Widget BalanceCard() {
       Image.asset("assets/images/Line.png"),
       Container(
         margin: const EdgeInsets.symmetric(horizontal: 30),
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Color(0xFF1A1A1A),
+          color: const Color(0xFF1A1A1A),
           borderRadius: BorderRadius.circular(10),
         ),
         width: double.infinity,
@@ -62,12 +62,12 @@ Widget BalanceCard() {
                 Row(
                   children: [
                     Image.asset("assets/images/Vector_3.png"),
-                    Text("179,000 Points",
+                    const Text("179,000 Points",
                         style: TextStyle(color: Colors.white, fontSize: 14)),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                   ],
                 ),
-                Row(
+                const Row(
                   children: [
                     Text("My Wallet",
                         style: TextStyle(color: Colors.white, fontSize: 14)),
