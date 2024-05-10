@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/utitls/colors.dart';
+import 'package:mobile_app/widget/btn/balance_tab_btn.dart';
 
 Widget BalanceCard() {
   return Column(
@@ -80,6 +82,20 @@ Widget BalanceCard() {
             ),
           ],
         ),
+      ),
+      SizedBox(height: 10),
+      Container(
+        // padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+        margin: EdgeInsets.symmetric(horizontal: 30),
+        decoration: BoxDecoration(
+          color: AppColors.lightColor,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        constraints: const BoxConstraints(
+          minHeight: 0,
+          maxHeight: double.infinity,
+        ),
+        child: BalanceTabBtn(),
       ),
     ],
   );
