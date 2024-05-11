@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:mobile_app/screens/home/home_view.dart';
-import 'package:mobile_app/screens/home/transfer_view.dart';
+import 'package:mobile_app/screens/transfer_view.dart';
 
 class Routers {
   // static const String splash = '/';

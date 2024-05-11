@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:mobile_app/utitls/colors.dart';
 
 class PrimaryBtn extends StatefulWidget {
   final String title;
   final void Function()? onTopPressed;
   final Map ? style;
-  const PrimaryBtn({super.key, required this.title, required this.onTopPressed, this.style});
+  final Widget ? icon;
+  const PrimaryBtn({super.key, required this.title, required this.onTopPressed, this.style, this.icon});
 
 
   @override
@@ -37,14 +39,27 @@ class _PrimaryBtnState extends State<PrimaryBtn> {
           //   )
           // ],
         ),
-        child: Text(
-          widget.title,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: widget.style != null ? widget.style!['textColor'] : AppColors.darkColor,
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-          ),
+        child: Row(
+          children: [
+             if (widget.icon != null) ...[
+              Container(
+                padding: const EdgeInsets.only(left: 10),
+                child: widget.icon!,
+              ),
+              // SizedBox(width: 10),
+            ],
+            Expanded(
+              child: Text(
+                widget.title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: widget.style != null ? widget.style!['textColor'] : AppColors.darkColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
           Column(
             children: [
               Profile(),
-              SizedBox(height: 60),
+              SizedBox(height: 70),
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.only(top: 180, left: 30, right: 30),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:mobile_app/controllers/bottom_navbar.dart';
 import 'package:mobile_app/screens/home/home.dart';
 import 'package:mobile_app/utitls/colors.dart';
 
@@ -10,6 +12,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  final BottomNavbar controller = Get.put(BottomNavbar());
   int currentIndex = 0;
 
   List<Map> navItems = [
@@ -51,16 +54,20 @@ class _HomeViewState extends State<HomeView> {
         showSelectedLabels: true,
         showUnselectedLabels: false,
         currentIndex: currentIndex,
-        onTap: (value) => setState(() => currentIndex = value),
-        items: navItems.map((e) {
-          return BottomNavigationBarItem(
-            backgroundColor: AppColors.lightColor,
-            icon: Icon(
-              e['icon'],
-            ),
-            label: e['label'],
-          );
-        }).toList(),
+        onTap: (value) {
+          setState(() => currentIndex = value);
+        },
+        items: navItems.map(
+          (e) {
+            return BottomNavigationBarItem(
+              backgroundColor: AppColors.lightColor,
+              icon: Icon(
+                e['icon'],
+              ),
+              label: e['label'],
+            );
+          },
+        ).toList(),
       ),
     );
   }

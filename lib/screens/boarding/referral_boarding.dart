@@ -15,9 +15,8 @@ class _ReferralBoardingState extends State<ReferralBoarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true, // Set this property to true
+      resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
-        // Wrap the Scaffold's body with SingleChildScrollView
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 30),
           child: Center(
@@ -25,7 +24,6 @@ class _ReferralBoardingState extends State<ReferralBoarding> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Your existing content...
                 Column(
                   children: [
                     Container(
@@ -75,6 +73,7 @@ class _ReferralBoardingState extends State<ReferralBoarding> {
                         height: 35,
                       ),
                       TextFormField(
+                        style: TextStyle(color: AppColors.lightColor),
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: const Color(0xFF1A1A1A),
@@ -95,7 +94,6 @@ class _ReferralBoardingState extends State<ReferralBoarding> {
                   padding: const EdgeInsets.only(bottom: 50),
                   child: Column(
                     children: [
-                      // Your existing content...
                       PrimaryBtn(
                         title: 'Continue',
                         onTopPressed: () => Get.to(const Password()),
