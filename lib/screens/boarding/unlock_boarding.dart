@@ -46,6 +46,9 @@ class _UnlockBoardingState extends State<UnlockBoarding> {
             children: [
               Column(
                 children: [
+                  SizedBox(
+                    height: size.height * 0.04,
+                  ),
                   Container(
                     margin: EdgeInsets.only(
                         top: size.height * 0.04, bottom: size.height * 0.01),
@@ -100,12 +103,9 @@ class _UnlockBoardingState extends State<UnlockBoarding> {
                   ),
                 ],
               ),
-              // SizedBox(
-              // height: size.height * 0.65,
-              // child: Column(
               Column(
                 children: [
-                  Image.asset("assets/images/Group_2.png"),
+                  Image.asset("assets/images/Group_2.png", width: size.width * 0.8, height: size.height * 0.4),
                   const Text(
                     "Welcome to\n Fundify!",
                     style: TextStyle(color: Colors.white, fontSize: 32),

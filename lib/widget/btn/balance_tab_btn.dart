@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:mobile_app/controllers/bottom_navbar.dart';
+// import 'package:get/get.dart';
+// import 'package:mobile_app/screens/layout/home_layout.dart';
 import 'package:mobile_app/utitls/colors.dart';
 // import 'package:mobile_app/utitls/routers.dart';
 
 class BalanceTabBtn extends StatefulWidget {
-  final void Function()? changeRoute;
+  final VoidCallback? changeRoute;
   const BalanceTabBtn({super.key, this.changeRoute});
 
   @override
@@ -13,13 +13,7 @@ class BalanceTabBtn extends StatefulWidget {
 }
 
 class _BalanceTabBtnState extends State<BalanceTabBtn> {
-  final BottomNavbar controller = Get.put(BottomNavbar());
-
-  @override
-  void initState() {
-    super.initState();
-    print(controller.showTransfer);
-  }
+  // final HomeController controller = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +23,13 @@ class _BalanceTabBtnState extends State<BalanceTabBtn> {
       mainAxisSize: MainAxisSize.max,
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          // padding: const EdgeInsets.symmetric(horizontal: 10),
           child: const Row(
             children: [
               Icon(
                 Icons.account_balance_wallet_outlined,
               ),
-              SizedBox(width: 5),
+              SizedBox(width: 3),
               Text(
                 "Top up",
                 style: TextStyle(
@@ -47,16 +41,19 @@ class _BalanceTabBtnState extends State<BalanceTabBtn> {
           ),
         ),
         Container(
+          margin: EdgeInsets.symmetric(horizontal: 3),
           width: 1,
           height: 36,
           color: AppColors.darkColor,
         ),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          // padding: const EdgeInsets.symmetric(horizontal: 10),
           child: InkWell(
             onTap: () => {
+              print('aaaa'),
               // Get.toNamed(Routers.transferView);
-              widget.changeRoute!()
+              // controller.showTransferView(),
+              widget.changeRoute?.call()
             },
             // onTap: () => Get.toNamed(Routers.transferView),
             child: const Row(
@@ -64,7 +61,7 @@ class _BalanceTabBtnState extends State<BalanceTabBtn> {
                 Icon(
                   Icons.call_split_outlined,
                 ),
-                SizedBox(width: 5),
+                SizedBox(width: 3),
                 InkWell(
                   child: Text(
                     "Transfer",
@@ -79,18 +76,19 @@ class _BalanceTabBtnState extends State<BalanceTabBtn> {
           ),
         ),
         Container(
+          margin: EdgeInsets.symmetric(horizontal: 3),
           width: 1,
           height: 36,
           color: AppColors.darkColor,
         ),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          // padding: const EdgeInsets.symmetric(horizontal: 10),
           child: const Row(
             children: [
               Icon(
                 Icons.more_horiz_outlined,
               ),
-              SizedBox(width: 5),
+              SizedBox(width: 3),
               Text(
                 "More",
                 style: TextStyle(

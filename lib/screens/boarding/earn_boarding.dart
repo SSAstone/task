@@ -34,7 +34,7 @@ class _EarnBoardingState extends State<EarnBoarding> {
 
   @override
   Widget build(BuildContext context) {
-    // final size = MediaQuery.sizeOf(context);
+    final size = MediaQuery.sizeOf(context);
 
     return Scaffold(
       body: Container(
@@ -101,18 +101,18 @@ class _EarnBoardingState extends State<EarnBoarding> {
               ),
               Container(
                 // height: size.height * 0.6,
-                margin: const EdgeInsets.only(top: 10),
-                
+                // margin: const EdgeInsets.only(top: 10),
+
                 child: Column(
                   children: [
-                    Image.asset("assets/images/Group.png"),
+                    Image.asset("assets/images/Group.png", width: size.width * 0.8, height: size.height * 0.37),
                     const Text(
                       "Welcome to\n Fundify!",
                       style: TextStyle(color: Colors.white, fontSize: 32),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     const Text(
                       "Empower your finances and earn rewards with every smart move.",
@@ -122,6 +122,7 @@ class _EarnBoardingState extends State<EarnBoarding> {
                   ],
                 ),
               ),
+              const SizedBox(height: 10),
               Container(
                 // padding: const EdgeInsets.only(bottom: 50),
                 child: Column(
@@ -130,7 +131,7 @@ class _EarnBoardingState extends State<EarnBoarding> {
                       title: 'Continue',
                       onTopPressed: () => Get.toNamed(Routers.unlockBoarding),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     PrimaryBtn(
                       title: 'Back',
                       onTopPressed: () => Get.back(),

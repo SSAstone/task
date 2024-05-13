@@ -53,7 +53,7 @@ class _MoneyConfirmationState extends State<MoneyConfirmation> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 50,
+              height: 20,
             ),
             const Text(
               "Receiver",
@@ -77,7 +77,7 @@ class _MoneyConfirmationState extends State<MoneyConfirmation> {
               ),
             ),
             const SizedBox(
-              height: 25,
+              height: 20,
             ),
             const Text(
               "Amount",
@@ -101,7 +101,7 @@ class _MoneyConfirmationState extends State<MoneyConfirmation> {
               ),
             ),
             const SizedBox(
-              height: 25,
+              height: 20,
             ),
             const Text(
               "Comment",
@@ -125,7 +125,7 @@ class _MoneyConfirmationState extends State<MoneyConfirmation> {
               ),
             ),
             const SizedBox(
-              height: 25,
+              height: 20,
             ),
             const Text(
               "Date",
@@ -149,7 +149,7 @@ class _MoneyConfirmationState extends State<MoneyConfirmation> {
               ),
             ),
             const SizedBox(
-              height: 25,
+              height: 20,
             ),
             const Text(
               "Transaction Code:",
@@ -173,7 +173,7 @@ class _MoneyConfirmationState extends State<MoneyConfirmation> {
               ),
             ),
             const SizedBox(
-              height: 25,
+              height: 20,
             ),
             const Expanded(child: SizedBox()),
             PrimaryBtn(

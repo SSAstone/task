@@ -1,44 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile_app/screens/layout/home_layout.dart';
 import 'package:mobile_app/utitls/colors.dart';
 
 class Gift extends StatefulWidget {
-  const Gift({super.key});
+   final void Function()? changeRoute;
+  final void Function()? backRoute;
+  const Gift({super.key, this.changeRoute, this.backRoute});
 
   @override
   State<Gift> createState() => _GiftState();
 }
 
 class _GiftState extends State<Gift> {
-  int currentIndex = 0;
-
-  List<Map> navItems = [
-    {
-      'icon': Icons.home,
-      'label': 'Home',
-    },
-    {
-      'icon': Icons.menu_open,
-      'label': 'Menu',
-    },
-    {
-      'icon': Icons.person,
-      'label': 'Profile',
-    },
-    {
-      'icon': Icons.settings,
-      'label': 'Setting',
-    }
-  ];
-
-  List<Widget> screen = [
-    const HomeLayout(),
-    const Text('Menu'),
-    const Text('Profile'),
-    const Text('Setting')
-  ];
-
   String dropdownvalue = 'Item 1';
 
   var items = [
@@ -129,29 +102,7 @@ class _GiftState extends State<Gift> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.darkColor,
-        selectedItemColor: AppColors.lightColor,
-        unselectedItemColor: AppColors.lightColor,
-        showSelectedLabels: true,
-        showUnselectedLabels: false,
-        currentIndex: currentIndex,
-        onTap: (value) {
-          setState(() => currentIndex = value);
-        },
-        items: navItems.map(
-          (e) {
-            return BottomNavigationBarItem(
-              backgroundColor: AppColors.lightColor,
-              icon: Icon(
-                e['icon'],
-              ),
-              label: e['label'],
-            );
-          },
-        ).toList(),
-      ),
+      
     );
   }
 }

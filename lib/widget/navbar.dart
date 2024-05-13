@@ -32,7 +32,7 @@ class _NavbarState extends State<Navbar> {
   ];
 
   List<Widget> screen = [
-    const HomeLayout(),
+     HomeLayout(),
     const Text('Menu'),
     const Text('Profile'),
     const Text('Setting')

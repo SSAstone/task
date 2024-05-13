@@ -26,7 +26,7 @@ class _ReferralBoardingState extends State<ReferralBoarding> {
               Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(top: 80, bottom: 20),
+                    margin: const EdgeInsets.only(top: 50, bottom: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

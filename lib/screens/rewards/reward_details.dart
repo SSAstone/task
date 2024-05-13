@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:mobile_app/screens/rewards/gift.dart';
 import 'package:mobile_app/utitls/colors.dart';
 import 'package:mobile_app/widget/card/reward_details_card.dart';
 
 class RewardDetails extends StatefulWidget {
+    final void Function()? changeRoute;
     final void Function()? backRoute;
 
-  const RewardDetails({super.key, this.backRoute});
+  const RewardDetails({super.key, this.changeRoute, this.backRoute});
 
   @override
   State<RewardDetails> createState() => _RewardDetailsState();
@@ -61,7 +60,7 @@ class _RewardDetailsState extends State<RewardDetails> {
                 itemCount: 5,
                 shrinkWrap: true,
                 itemBuilder: (context, index) => InkWell(
-                  onTap: () => Get.to(() => const Gift()),
+                  onTap: () => widget.changeRoute?.call(),
                   child: const RewardDetailsCard(),
                 ),
               ),

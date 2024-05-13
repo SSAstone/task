@@ -1,46 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:mobile_app/controllers/reward_layout_controller.dart';
+import 'package:mobile_app/screens/rewards/gift.dart';
 import 'package:mobile_app/screens/rewards/reward_details.dart';
 import 'package:mobile_app/utitls/colors.dart';
 import 'package:mobile_app/widget/card/reward_card.dart';
 
-class RewardLayout extends StatefulWidget {
-  const RewardLayout({super.key});
-
-  @override
-  State<RewardLayout> createState() => _RewardLayoutState();
-}
-
-class _RewardLayoutState extends State<RewardLayout> {
-  String view = "";
-
-  void showDetails() {
-    setState(() {
-      view = "details";
-    });
-  }
-  void hidDetails() {
-    setState(() {
-      view = "";
-    });
-  }
+class RewardLayout extends StatelessWidget {
+  final RewardLayoutController controller = Get.put(RewardLayoutController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Builder(
-        builder: (context) {
-          if (view == "details") {
-            return RewardDetails(backRoute:() => hidDetails(),);
-          } else {
+      body: Obx(() {
+        switch (controller.view.value) {
+          case "details":
+            return RewardDetails(
+              changeRoute: controller.showGift,
+              backRoute: controller.hidDetails,
+            );
+          case "gift":
+            return Gift(
+              changeRoute: controller.showGift,
+              backRoute: controller.hidGift,
+            );
+          default:
             return Scaffold(
               appBar: AppBar(
                 title: const Text(
                   'Rewards Page',
                   style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
                 centerTitle: true,
                 backgroundColor: AppColors.darkColor,
@@ -53,9 +47,7 @@ class _RewardLayoutState extends State<RewardLayout> {
                 actions: [
                   IconButton(
                     onPressed: () {
-                      setState(() {
-                        view = "";
-                      });
+                      controller.hidDetails();
                     },
                     icon: const Icon(
                       Icons.info_outline,
@@ -85,19 +77,19 @@ class _RewardLayoutState extends State<RewardLayout> {
                         shrinkWrap: true,
                         itemBuilder: (context, index) => Container(
                           margin: const EdgeInsets.only(bottom: 16),
-                          child:  RewardCard(changeRoute: () => showDetails()),
+                          child: RewardCard(
+                            changeRoute: () => controller.showDetails(),
+                          ),
                         ),
                       ),
                     ),
                     const SizedBox(height: 10),
-                    // RewardCard(),
                   ],
                 ),
               ),
             );
-          }
-        },
-      ),
+        }
+      }),
     );
   }
 }

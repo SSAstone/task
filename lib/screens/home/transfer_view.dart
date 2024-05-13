@@ -7,8 +7,8 @@ import 'package:mobile_app/widget/btn/primary_btn.dart';
 
 
 class TransferView extends StatefulWidget {
-  final void Function()? backRoute;
-  final void Function()? changeRoute;
+  final VoidCallback? backRoute;
+  final VoidCallback? changeRoute;
   const TransferView({super.key, this.backRoute, this.changeRoute});
 
   @override

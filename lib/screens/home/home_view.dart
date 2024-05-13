@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:mobile_app/controllers/bottom_navbar.dart';
 import 'package:mobile_app/screens/layout/home_layout.dart';
 import 'package:mobile_app/screens/layout/reward_layout.dart';
 // import 'package:mobile_app/screens/rewards/rewards_view.dart';
@@ -14,7 +12,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final BottomNavbar controller = Get.put(BottomNavbar());
   int currentIndex = 0;
 
   List<Map> navItems = [
@@ -37,8 +34,8 @@ class _HomeViewState extends State<HomeView> {
   ];
 
   List<Widget> screen = [
-    const HomeLayout(),
-    const RewardLayout(),
+    HomeLayout(),
+    RewardLayout(),
     const Text('Profile'),
     const Text('Setting')
   ];
