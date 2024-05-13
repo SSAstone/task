@@ -1,46 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:mobile_app/screens/home/home.dart';
-import 'package:mobile_app/screens/select_ccount.dart';
 import 'package:mobile_app/utitls/colors.dart';
 import 'package:mobile_app/widget/btn/primary_btn.dart';
 
 class EnterAccount extends StatefulWidget {
-  const EnterAccount({super.key});
+  final Function()? changeRoute;
+  final Function()? backRoute;
+
+  const EnterAccount({super.key, this.changeRoute, this.backRoute});
 
   @override
   State<EnterAccount> createState() => _EnterAccountState();
 }
 
 class _EnterAccountState extends State<EnterAccount> {
-    int currentIndex = 0;
-
-  List<Map> navItems = [
-    {
-      'icon': Icons.home,
-      'label': 'Home',
-    },
-    {
-      'icon': Icons.menu_open,
-      'label': 'Menu',
-    },
-    {
-      'icon': Icons.person,
-      'label': 'Profile',
-    },
-    {
-      'icon': Icons.settings,
-      'label': 'Setting',
-    }
-  ];
-
-  List<Widget> screen = [
-    const Home(),
-    const Text('Menu'),
-    const Text('Profile'),
-    const Text('Setting')
-  ];
-
+   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +25,9 @@ class _EnterAccountState extends State<EnterAccount> {
         ),
         centerTitle: true,
         leading: IconButton(
-          onPressed: () => Get.back(),
+          onPressed: () {
+            widget.backRoute?.call();
+          },
           icon: const Icon(
             Icons.arrow_back_ios,
             color: Colors.white,
@@ -85,34 +60,14 @@ class _EnterAccountState extends State<EnterAccount> {
             Expanded(child: SizedBox()),
             PrimaryBtn(
               title: 'Continue',
-              onTopPressed: () => Get.to(() => SelectAccount()),
+              onTopPressed: () => {
+                widget.changeRoute?.call()
+              },
             ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.darkColor,
-        selectedItemColor: AppColors.lightColor,
-        unselectedItemColor: AppColors.lightColor,
-        showSelectedLabels: true,
-        showUnselectedLabels: false,
-        currentIndex: currentIndex,
-        onTap: (value) {
-          setState(() => currentIndex = value);
-        },
-        items: navItems.map(
-          (e) {
-            return BottomNavigationBarItem(
-              backgroundColor: AppColors.lightColor,
-              icon: Icon(
-                e['icon'],
-              ),
-              label: e['label'],
-            );
-          },
-        ).toList(),
-      ),
+      
     );
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_app/controllers/bottom_navbar.dart';
-import 'package:mobile_app/screens/home/home.dart';
+import 'package:mobile_app/screens/layout/home_layout.dart';
+import 'package:mobile_app/screens/layout/reward_layout.dart';
+// import 'package:mobile_app/screens/rewards/rewards_view.dart';
 import 'package:mobile_app/utitls/colors.dart';
 
 class HomeView extends StatefulWidget {
@@ -21,8 +23,8 @@ class _HomeViewState extends State<HomeView> {
       'label': 'Home',
     },
     {
-      'icon': Icons.menu_open,
-      'label': 'Menu',
+      'icon': Icons.fast_rewind_outlined,
+      'label': 'Rewards',
     },
     {
       'icon': Icons.person,
@@ -35,8 +37,8 @@ class _HomeViewState extends State<HomeView> {
   ];
 
   List<Widget> screen = [
-    const Home(),
-    const Text('Menu'),
+    const HomeLayout(),
+    const RewardLayout(),
     const Text('Profile'),
     const Text('Setting')
   ];

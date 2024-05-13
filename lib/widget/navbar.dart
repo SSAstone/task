@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/screens/home/home.dart';
+import 'package:mobile_app/screens/layout/home_layout.dart';
 import 'package:mobile_app/utitls/colors.dart';
 
 class Navbar extends StatefulWidget {
@@ -32,7 +32,7 @@ class _NavbarState extends State<Navbar> {
   ];
 
   List<Widget> screen = [
-    const Home(),
+    const HomeLayout(),
     const Text('Menu'),
     const Text('Profile'),
     const Text('Setting')

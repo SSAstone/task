@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_app/screens/home/splash_view.dart';
 import 'package:mobile_app/utitls/colors.dart';
+import 'package:mobile_app/utitls/routers.dart';
 // import 'package:mobile_app/utitls/routers.dart';
 
 void main() {
@@ -22,8 +23,8 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.darkColor,
       ),
       home: const SplashView(),
-      // initialRoute: Routers.home,
-      // getPages: Routers.routers,
+      initialRoute: Routers.splash,
+      getPages: Routers.routers,
     );
   }
 }

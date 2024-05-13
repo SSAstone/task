@@ -1,49 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:mobile_app/controllers/bottom_navbar.dart';
-import 'package:mobile_app/screens/enter_account.dart';
-import 'package:mobile_app/screens/home/home.dart';
+// import 'package:get/get.dart';
+// import 'package:mobile_app/screens/enter_account.dart';
 import 'package:mobile_app/utitls/colors.dart';
+// import 'package:mobile_app/utitls/routers.dart';
 import 'package:mobile_app/widget/btn/primary_btn.dart';
 
 
 class TransferView extends StatefulWidget {
-  const TransferView({super.key});
+  final void Function()? backRoute;
+  final void Function()? changeRoute;
+  const TransferView({super.key, this.backRoute, this.changeRoute});
 
   @override
   State<TransferView> createState() => _TransferViewState();
 }
 
 class _TransferViewState extends State<TransferView> {
-  final BottomNavbar controller = Get.put(BottomNavbar());
-
-    int currentIndex = 0;
-
-  List<Map> navItems = [
-    {
-      'icon': Icons.home,
-      'label': 'Home',
-    },
-    {
-      'icon': Icons.menu_open,
-      'label': 'Menu',
-    },
-    {
-      'icon': Icons.person,
-      'label': 'Profile',
-    },
-    {
-      'icon': Icons.settings,
-      'label': 'Setting',
-    }
-  ];
-
-  List<Widget> screen = [
-    const Home(),
-    const Text('Menu'),
-    const Text('Profile'),
-    const Text('Setting')
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +28,10 @@ class _TransferViewState extends State<TransferView> {
         ),
         centerTitle: true,
         leading: IconButton(
-          onPressed: () => Get.back(),
+          onPressed: () {
+            widget.backRoute?.call();
+            // Get.toNamed(Routers.homeView);
+          },
           icon: const Icon(
             Icons.arrow_back_ios,
             color: Colors.white,
@@ -75,7 +50,10 @@ class _TransferViewState extends State<TransferView> {
               ),
               PrimaryBtn(
                 title: "Fundify Account",
-                onTopPressed: () => Get.to(() => EnterAccount()),
+                onTopPressed: () {
+                  widget.changeRoute?.call();
+                  // Get.to(() => EnterAccount());
+                },
                 style: const {
                   "color": Color(0xFF1A1A1A),
                   "textColor": AppColors.lightColor
@@ -91,7 +69,7 @@ class _TransferViewState extends State<TransferView> {
               ),
               PrimaryBtn(
                 title: "Local Bank",
-                onTopPressed: () => Get.to(() => {}),
+                onTopPressed: () {},
                 style: const {
                   "color": Color(0xFF1A1A1A),
                   "textColor": AppColors.lightColor
@@ -105,7 +83,7 @@ class _TransferViewState extends State<TransferView> {
               SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 "Transfers to Fundify Accounts earns you more FundCoins",
                 style: TextStyle(color: AppColors.lightColor),
               )
@@ -113,29 +91,7 @@ class _TransferViewState extends State<TransferView> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.darkColor,
-        selectedItemColor: AppColors.lightColor,
-        unselectedItemColor: AppColors.lightColor,
-        showSelectedLabels: true,
-        showUnselectedLabels: false,
-        currentIndex: currentIndex,
-        onTap: (value) {
-          setState(() => currentIndex = value);
-        },
-        items: navItems.map(
-          (e) {
-            return BottomNavigationBarItem(
-              backgroundColor: AppColors.lightColor,
-              icon: Icon(
-                e['icon'],
-              ),
-              label: e['label'],
-            );
-          },
-        ).toList(),
-      ),
+      
     );
   }
 }

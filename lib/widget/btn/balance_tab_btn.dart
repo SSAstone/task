@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_app/controllers/bottom_navbar.dart';
-import 'package:mobile_app/screens/transfer_view.dart';
 import 'package:mobile_app/utitls/colors.dart';
+// import 'package:mobile_app/utitls/routers.dart';
 
 class BalanceTabBtn extends StatefulWidget {
-  const BalanceTabBtn({super.key});
+  final void Function()? changeRoute;
+  const BalanceTabBtn({super.key, this.changeRoute});
 
   @override
   State<BalanceTabBtn> createState() => _BalanceTabBtnState();
@@ -25,15 +26,16 @@ class _BalanceTabBtnState extends State<BalanceTabBtn> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: const Row(
             children: [
               Icon(
                 Icons.account_balance_wallet_outlined,
               ),
-              SizedBox(width: 10),
+              SizedBox(width: 5),
               Text(
                 "Top up",
                 style: TextStyle(
@@ -50,15 +52,19 @@ class _BalanceTabBtnState extends State<BalanceTabBtn> {
           color: AppColors.darkColor,
         ),
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: InkWell(
-            onTap: () => Get.to(() => TransferView()),
+            onTap: () => {
+              // Get.toNamed(Routers.transferView);
+              widget.changeRoute!()
+            },
+            // onTap: () => Get.toNamed(Routers.transferView),
             child: const Row(
               children: [
                 Icon(
                   Icons.call_split_outlined,
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: 5),
                 InkWell(
                   child: Text(
                     "Transfer",
@@ -78,13 +84,13 @@ class _BalanceTabBtnState extends State<BalanceTabBtn> {
           color: AppColors.darkColor,
         ),
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: const Row(
             children: [
               Icon(
                 Icons.more_horiz_outlined,
               ),
-              SizedBox(width: 10),
+              SizedBox(width: 5),
               Text(
                 "More",
                 style: TextStyle(

@@ -1,45 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:mobile_app/screens/home/home.dart';
-import 'package:mobile_app/screens/select_ccount.dart';
+import 'package:flutter/widgets.dart';
 import 'package:mobile_app/utitls/colors.dart';
 import 'package:mobile_app/widget/btn/primary_btn.dart';
 
 class MoneyConfirmation extends StatefulWidget {
-  const MoneyConfirmation({super.key});
+  final void Function()? changeRoute;
+  final void Function()? backRoute;
+  const MoneyConfirmation({super.key , this.changeRoute, this.backRoute});
 
   @override
   State<MoneyConfirmation> createState() => _MoneyConfirmationState();
 }
 
 class _MoneyConfirmationState extends State<MoneyConfirmation> {
-  int currentIndex = 0;
-
-  List<Map> navItems = [
-    {
-      'icon': Icons.home,
-      'label': 'Home',
-    },
-    {
-      'icon': Icons.menu_open,
-      'label': 'Menu',
-    },
-    {
-      'icon': Icons.person,
-      'label': 'Profile',
-    },
-    {
-      'icon': Icons.settings,
-      'label': 'Setting',
-    }
-  ];
-
-  List<Widget> screen = [
-    const Home(),
-    const Text('Menu'),
-    const Text('Profile'),
-    const Text('Setting')
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,8 +36,13 @@ class _MoneyConfirmationState extends State<MoneyConfirmation> {
           ],
         ),
         centerTitle: true,
-        actions: const [
-          Text("Close", style: TextStyle(color: AppColors.lightColor)),
+        actions: [
+          IconButton(
+            onPressed: () => {
+              widget.backRoute?.call(),
+            },
+            icon: const Text("Close", style: TextStyle(color: AppColors.lightColor)),
+          ),
           SizedBox(width: 20),
         ],
         backgroundColor: AppColors.darkColor,
@@ -72,42 +50,140 @@ class _MoneyConfirmationState extends State<MoneyConfirmation> {
       body: Container(
         margin: EdgeInsets.all(30),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
               height: 50,
             ),
-            const Text("Receiver", style: TextStyle(fontSize: 20)),
-            Expanded(child: SizedBox()),
+            const Text(
+              "Receiver",
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white),
+            ),
+            const SizedBox(
+              height: 6,
+            ),
+            const Opacity(
+              opacity: 0.7,
+              child: Text(
+                "Shater Tsavsar",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFFF4F1EB),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Text(
+              "Amount",
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white),
+            ),
+            const SizedBox(
+              height: 6,
+            ),
+            const Opacity(
+              opacity: 0.7,
+              child: Text(
+                "₣15,000",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFFF4F1EB),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Text(
+              "Comment",
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white),
+            ),
+            const SizedBox(
+              height: 6,
+            ),
+            const Opacity(
+              opacity: 0.7,
+              child: Text(
+                "Test",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFFF4F1EB),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Text(
+              "Date",
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white),
+            ),
+            const SizedBox(
+              height: 6,
+            ),
+            const Opacity(
+              opacity: 0.7,
+              child: Text(
+                "03/02/2024",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFFF4F1EB),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Text(
+              "Transaction Code:",
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white),
+            ),
+            const SizedBox(
+              height: 6,
+            ),
+            const Opacity(
+              opacity: 0.7,
+              child: Text(
+                "2PR yJRH18JI i1NNuwwb mZVJ",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFFF4F1EB),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Expanded(child: SizedBox()),
             PrimaryBtn(
-              title: 'Continue',
-              onTopPressed: () => Get.to(() => SelectAccount()),
+              title: 'Print Receipt',
+              onTopPressed: () {},
             ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.darkColor,
-        selectedItemColor: AppColors.lightColor,
-        unselectedItemColor: AppColors.lightColor,
-        showSelectedLabels: true,
-        showUnselectedLabels: false,
-        currentIndex: currentIndex,
-        onTap: (value) {
-          setState(() => currentIndex = value);
-        },
-        items: navItems.map(
-          (e) {
-            return BottomNavigationBarItem(
-              backgroundColor: AppColors.lightColor,
-              icon: Icon(
-                e['icon'],
-              ),
-              label: e['label'],
-            );
-          },
-        ).toList(),
-      ),
+     
     );
   }
 }

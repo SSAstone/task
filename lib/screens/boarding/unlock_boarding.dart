@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile_app/screens/boarding/boarding_3.dart';
+import 'package:mobile_app/screens/boarding/referral_boarding.dart';
 import 'package:mobile_app/utitls/colors.dart';
 import 'package:mobile_app/widget/btn/primary_btn.dart';
 
-class Boarding_2 extends StatefulWidget {
-  const Boarding_2({super.key});
+class UnlockBoarding extends StatefulWidget {
+  const UnlockBoarding({super.key});
 
   @override
-  State<Boarding_2> createState() => _Boarding_2State();
+  State<UnlockBoarding> createState() => _UnlockBoardingState();
 }
 
-class _Boarding_2State extends State<Boarding_2> {
+class _UnlockBoardingState extends State<UnlockBoarding> {
   List<Map> boarding = [
     {
       'label': 'Welcome to\n Fundify!',
@@ -47,10 +47,25 @@ class _Boarding_2State extends State<Boarding_2> {
               Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(top: 80, bottom: 20),
+                    margin: EdgeInsets.only(
+                        top: size.height * 0.04, bottom: size.height * 0.01),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        SizedBox(
+                          width: 30,
+                          height: 3,
+                          child: Opacity(
+                            opacity: 0.1,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                color: AppColors.secondaryColor,
+                                borderRadius: BorderRadius.circular(26),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
                         SizedBox(
                           width: 30,
                           height: 3,
@@ -75,20 +90,6 @@ class _Boarding_2State extends State<Boarding_2> {
                             ),
                           ),
                         ),
-                        const SizedBox(width: 10),
-                        SizedBox(
-                          width: 30,
-                          height: 3,
-                          child: Opacity(
-                            opacity: 0.1,
-                            child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                color: AppColors.secondaryColor,
-                                borderRadius: BorderRadius.circular(26),
-                              ),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ),
@@ -99,48 +100,38 @@ class _Boarding_2State extends State<Boarding_2> {
                   ),
                 ],
               ),
-              Container(
-                height: size.height * 0.6,
-                margin: const EdgeInsets.only(top: 10),
-                // padding: EdgeInsets.only(top: 300),
-                // decoration: const BoxDecoration(
-                //   image: DecorationImage(
-                //     image: AssetImage("assets/images/Group.png"),
-                //     fit: BoxFit.fill,
-                //   ),
-                // ),
-                // width: double.infinity,
-                child: Column(
-                  children: [
-                    // const SizedBox(
-                    //   height: 30,
-                    // ),
-                    Image.asset("assets/images/Group.png"),
-                    const Text(
-                      "Welcome to\n Fundify!",
-                      style: TextStyle(color: Colors.white, fontSize: 32),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Text(
-                      "Empower your finances and earn rewards with every smart move.",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
+              // SizedBox(
+              // height: size.height * 0.65,
+              // child: Column(
+              Column(
+                children: [
+                  Image.asset("assets/images/Group_2.png"),
+                  const Text(
+                    "Welcome to\n Fundify!",
+                    style: TextStyle(color: Colors.white, fontSize: 32),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(
+                    height: size.height * 0.01,
+                  ),
+                  const Text(
+                    "Empower your finances and earn rewards with every smart move.",
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
+              // ),
               Container(
-                padding: const EdgeInsets.only(bottom: 50),
+                // padding: EdgeInsets.only(bottom: size.height * 0.05),
                 child: Column(
                   children: [
                     PrimaryBtn(
                       title: 'Continue',
-                      onTopPressed: () => Get.to(() => const Boarding_3()),
+                      onTopPressed: () =>
+                          Get.to(() => const ReferralBoarding()),
                     ),
-                    const SizedBox(height: 20),
+                    // const SizedBox(height: 10),
                     PrimaryBtn(
                       title: 'Back',
                       onTopPressed: () => Get.back(),

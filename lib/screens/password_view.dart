@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/screens/home/home_view.dart';
+import 'package:get/get.dart';
 import 'package:mobile_app/utitls/colors.dart';
+import 'package:mobile_app/utitls/routers.dart';
 import 'package:mobile_app/widget/btn/primary_btn.dart';
 
 class Password extends StatefulWidget {
@@ -12,7 +13,7 @@ class Password extends StatefulWidget {
 
 class _PasswordState extends State<Password> {
   String enteredPin = '';
-    TextEditingController pinController = TextEditingController();
+  TextEditingController pinController = TextEditingController();
 
   void addNumber(String number) {
     if (enteredPin.length < 4) {
@@ -31,6 +32,7 @@ class _PasswordState extends State<Password> {
       });
     }
   }
+
   void clearNumber() {
     if (enteredPin.isNotEmpty) {
       setState(() {
@@ -51,7 +53,9 @@ class _PasswordState extends State<Password> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 64,),
+              const SizedBox(
+                height: 50,
+              ),
               Image.asset(
                 "assets/images/Vector_2.png",
                 height: 28,
@@ -68,13 +72,12 @@ class _PasswordState extends State<Password> {
                 keyboardType: TextInputType.number,
                 // maxLength: 4,
                 textAlign: TextAlign.center,
-                decoration: const InputDecoration(
-                    border: InputBorder.none),
+                decoration: const InputDecoration(border: InputBorder.none),
               ),
               GridView.count(
                 crossAxisCount: 3,
                 shrinkWrap: true,
-                padding: const EdgeInsets.all(30),
+                padding: const EdgeInsets.only(left: 30, right: 30),
                 mainAxisSpacing: 10.0,
                 crossAxisSpacing: 10.0,
                 children: List.generate(
@@ -83,25 +86,18 @@ class _PasswordState extends State<Password> {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.only( top: 10, bottom: 50),
+                padding: const EdgeInsets.only(top: 20, bottom: 10),
                 child: Column(
                   children: [
                     PrimaryBtn(
                       title: 'Confirm',
-                      onTopPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HomeView(),
-                          ),
-                        );
-                      },
+                      onTopPressed: () => Get.toNamed(Routers.homeView),
                       style: const {
                         'color': AppColors.darkColor,
                         'textColor': AppColors.lightColor,
-                      }
+                      },
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     PrimaryBtn(
                       title: 'Forgot Pin?',
                       onTopPressed: () => {},
@@ -124,7 +120,8 @@ class _PasswordState extends State<Password> {
         else if (number == '11')
           {addNumber('0')}
         else if (number == '12')
-         { deleteNumber()} else
+          {deleteNumber()}
+        else
           {addNumber(number)}
       },
       child: number == '10'

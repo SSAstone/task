@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:mobile_app/screens/boarding/boarding_view.dart';
+import 'package:get/get.dart';
+
+import 'package:mobile_app/utitls/routers.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -16,12 +18,7 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
     Timer(
       const Duration(seconds: 3),
-      () => Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const BoardingView(),
-        ),
-      ),
+      () => Get.offNamed(Routers.welcomeBoarding),
     );
   }
   @override

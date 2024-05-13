@@ -1,57 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:mobile_app/screens/home/home.dart';
-import 'package:mobile_app/screens/money_confirmation.dart';
 import 'package:mobile_app/utitls/colors.dart';
 import 'package:mobile_app/widget/btn/primary_btn.dart';
 
 class SendMoney extends StatefulWidget {
-  const SendMoney({super.key});
+  final void Function()? changeRoute;
+  final void Function()? backRoute;
+  const SendMoney({super.key, this.changeRoute, this.backRoute});
 
   @override
   State<SendMoney> createState() => _SendMoneyState();
 }
 
 class _SendMoneyState extends State<SendMoney> {
-  int currentIndex = 0;
 
-  List<Map> navItems = [
-    {
-      'icon': Icons.home,
-      'label': 'Home',
-    },
-    {
-      'icon': Icons.menu_open,
-      'label': 'Menu',
-    },
-    {
-      'icon': Icons.person,
-      'label': 'Profile',
-    },
-    {
-      'icon': Icons.settings,
-      'label': 'Setting',
-    }
+  String dropdownvalue = 'Item 1';
+
+  var items = [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+    'Item 5',
   ];
-
-  List<Widget> screen = [
-    const Home(),
-    const Text('Menu'),
-    const Text('Profile'),
-    const Text('Setting')
-  ];
-
-  List<DropdownMenuItem<String>> get dropdownItems {
-    List<DropdownMenuItem<String>> menuItems = [
-      DropdownMenuItem(child: Text("USA"), value: "USA"),
-      DropdownMenuItem(child: Text("Canada"), value: "Canada"),
-      DropdownMenuItem(child: Text("Brazil"), value: "Brazil"),
-      DropdownMenuItem(child: Text("England"), value: "England"),
-    ];
-    return menuItems;
-  }
-
-  String selectedValue = "USA";
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +34,9 @@ class _SendMoneyState extends State<SendMoney> {
         ),
         centerTitle: true,
         leading: IconButton(
-          onPressed: () => Get.back(),
+          onPressed: () {
+            widget.backRoute?.call();
+          },
           icon: const Icon(
             Icons.arrow_back_ios,
             color: Colors.white,
@@ -114,17 +86,37 @@ class _SendMoneyState extends State<SendMoney> {
               height: 15,
             ),
             DropdownButtonFormField(
+              dropdownColor: AppColors.darkColor,
               style: const TextStyle(color: AppColors.lightColor),
               decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                      borderSide: const BorderSide(
-                        color: AppColors.primaryColor,
-                      ))),
-              value: selectedValue,
-              items: dropdownItems,
-              onChanged: (value) {
-                setState(() => selectedValue = value!);
+                filled: true,
+                fillColor: const Color(0xFF1A1A1A),
+                labelText: 'Select Country',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(
+                    color: AppColors.secondaryColor,
+                    
+                  )
+                ),
+              ),
+              value: dropdownvalue,
+              icon: const Icon(Icons.keyboard_arrow_down),
+              items: items.map(
+                (String items) {
+                  return DropdownMenuItem(
+                    
+                    value: items,
+                    child: Text(items),
+                  );
+                },
+              ).toList(),
+              onChanged: (String? newValue) {
+                setState(
+                  () {
+                    dropdownvalue = newValue!;
+                  },
+                );
               },
             ),
             const SizedBox(
@@ -155,34 +147,14 @@ class _SendMoneyState extends State<SendMoney> {
             const Expanded(child: SizedBox()),
             PrimaryBtn(
               title: 'Continue',
-              onTopPressed: () => Get.to(() => const MoneyConfirmation()),
+              onTopPressed: () => {
+                widget.changeRoute?.call(),
+              },
             ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.darkColor,
-        selectedItemColor: AppColors.lightColor,
-        unselectedItemColor: AppColors.lightColor,
-        showSelectedLabels: true,
-        showUnselectedLabels: false,
-        currentIndex: currentIndex,
-        onTap: (value) {
-          setState(() => currentIndex = value);
-        },
-        items: navItems.map(
-          (e) {
-            return BottomNavigationBarItem(
-              backgroundColor: AppColors.lightColor,
-              icon: Icon(
-                e['icon'],
-              ),
-              label: e['label'],
-            );
-          },
-        ).toList(),
-      ),
+      
     );
   }
 }

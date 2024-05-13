@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile_app/screens/boarding/boarding_2.dart';
 import 'package:mobile_app/utitls/colors.dart';
+import 'package:mobile_app/utitls/routers.dart';
 import 'package:mobile_app/widget/btn/primary_btn.dart';
 
-class BoardingView extends StatefulWidget {
-  const BoardingView({super.key});
+class EarnBoarding extends StatefulWidget {
+  const EarnBoarding({super.key});
 
   @override
-  State<BoardingView> createState() => _BoardingViewState();
+  State<EarnBoarding> createState() => _EarnBoardingState();
 }
 
-class _BoardingViewState extends State<BoardingView> {
+class _EarnBoardingState extends State<EarnBoarding> {
   List<Map> boarding = [
     {
       'label': 'Welcome to\n Fundify!',
@@ -34,7 +34,7 @@ class _BoardingViewState extends State<BoardingView> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
+    // final size = MediaQuery.sizeOf(context);
 
     return Scaffold(
       body: Container(
@@ -47,21 +47,10 @@ class _BoardingViewState extends State<BoardingView> {
               Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(top: 80, bottom: 20),
+                    margin: const EdgeInsets.only(top: 40, bottom: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(
-                          width: 30,
-                          height: 3,
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              color: AppColors.primaryColor,
-                              borderRadius: BorderRadius.circular(26),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 10),
                         SizedBox(
                           width: 30,
                           height: 3,
@@ -72,6 +61,17 @@ class _BoardingViewState extends State<BoardingView> {
                                 color: AppColors.secondaryColor,
                                 borderRadius: BorderRadius.circular(26),
                               ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        SizedBox(
+                          width: 30,
+                          height: 3,
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: AppColors.primaryColor,
+                              borderRadius: BorderRadius.circular(26),
                             ),
                           ),
                         ),
@@ -100,27 +100,21 @@ class _BoardingViewState extends State<BoardingView> {
                 ],
               ),
               Container(
-                height: size.height * 0.5,
+                // height: size.height * 0.6,
                 margin: const EdgeInsets.only(top: 10),
-                padding: EdgeInsets.only(top: size.height * 0.28),
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/image_2.png"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                width: double.infinity,
-                child: const Column(
+                
+                child: Column(
                   children: [
-                    Text(
+                    Image.asset("assets/images/Group.png"),
+                    const Text(
                       "Welcome to\n Fundify!",
                       style: TextStyle(color: Colors.white, fontSize: 32),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Text(
+                    const Text(
                       "Empower your finances and earn rewards with every smart move.",
                       style: TextStyle(color: Colors.white, fontSize: 16),
                       textAlign: TextAlign.center,
@@ -129,10 +123,23 @@ class _BoardingViewState extends State<BoardingView> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(bottom: size.height * 0.1),
-                child: PrimaryBtn(
-                  title: 'Continue',
-                  onTopPressed: () => Get.to(() => const Boarding_2()),
+                // padding: const EdgeInsets.only(bottom: 50),
+                child: Column(
+                  children: [
+                    PrimaryBtn(
+                      title: 'Continue',
+                      onTopPressed: () => Get.toNamed(Routers.unlockBoarding),
+                    ),
+                    const SizedBox(height: 20),
+                    PrimaryBtn(
+                      title: 'Back',
+                      onTopPressed: () => Get.back(),
+                      style: const {
+                        'color': AppColors.darkColor,
+                        'textColor': AppColors.lightColor,
+                      },
+                    )
+                  ],
                 ),
               )
             ],
