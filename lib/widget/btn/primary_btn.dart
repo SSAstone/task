@@ -25,7 +25,7 @@ class _PrimaryBtnState extends State<PrimaryBtn> {
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(
-          vertical: 14,
+          vertical: 12,
         ),
         decoration: BoxDecoration(
           color: widget.style != null ? widget.style!['color'] : AppColors.lightColor,

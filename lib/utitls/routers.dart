@@ -27,6 +27,6 @@ class Routers {
     GetPage(name: referralBoarding, page: () => const ReferralBoarding()),
     GetPage(name: passwordPin, page: () => const Password()),
     GetPage(name: homeView, page: () => const HomeView()),
-    GetPage(name: transferView, page: () => const TransferView()),
+    GetPage(name: transferView, page: () => TransferView()),
   ];
 }

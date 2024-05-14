@@ -43,12 +43,12 @@ class _MoneyConfirmationState extends State<MoneyConfirmation> {
             },
             icon: const Text("Close", style: TextStyle(color: AppColors.lightColor)),
           ),
-          SizedBox(width: 20),
+          SizedBox(width: 10),
         ],
         backgroundColor: AppColors.darkColor,
       ),
       body: Container(
-        margin: EdgeInsets.all(30),
+        margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

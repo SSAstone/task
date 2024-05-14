@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:mobile_app/controllers/home_layout_controller.dart';
 // import 'package:get/get.dart';
 // import 'package:mobile_app/screens/layout/home_layout.dart';
 import 'package:mobile_app/utitls/colors.dart';
 // import 'package:mobile_app/utitls/routers.dart';
 
-class BalanceTabBtn extends StatefulWidget {
+class BalanceTabBtn extends StatelessWidget {
   final VoidCallback? changeRoute;
-  const BalanceTabBtn({super.key, this.changeRoute});
+  BalanceTabBtn({super.key, this.changeRoute});
 
-  @override
-  State<BalanceTabBtn> createState() => _BalanceTabBtnState();
-}
-
-class _BalanceTabBtnState extends State<BalanceTabBtn> {
   // final HomeController controller = Get.put(HomeController());
+    final HomeLayoutController controller = Get.put(HomeLayoutController());
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +47,7 @@ class _BalanceTabBtnState extends State<BalanceTabBtn> {
         Container(
           // padding: const EdgeInsets.symmetric(horizontal: 10),
           child: InkWell(
-            onTap: () => {
-              print('aaaa'),
-              // Get.toNamed(Routers.transferView);
-              // controller.showTransferView(),
-              widget.changeRoute?.call()
-            },
+            onTap: () => controller.showTransferView(),
             // onTap: () => Get.toNamed(Routers.transferView),
             child: const Row(
               children: [

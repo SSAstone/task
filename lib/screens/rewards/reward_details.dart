@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:mobile_app/controllers/reward_layout_controller.dart';
 import 'package:mobile_app/utitls/colors.dart';
 import 'package:mobile_app/widget/card/reward_details_card.dart';
 
-class RewardDetails extends StatefulWidget {
-    final void Function()? changeRoute;
-    final void Function()? backRoute;
+class RewardDetails extends StatelessWidget {
+  final void Function()? changeRoute;
+  final void Function()? backRoute;
 
-  const RewardDetails({super.key, this.changeRoute, this.backRoute});
+  RewardDetails({super.key, this.changeRoute, this.backRoute});
 
-  @override
-  State<RewardDetails> createState() => _RewardDetailsState();
-}
+  final RewardLayoutController reward_controller = Get.put(RewardLayoutController());
 
-class _RewardDetailsState extends State<RewardDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +20,7 @@ class _RewardDetailsState extends State<RewardDetails> {
         centerTitle: true,
         toolbarHeight: 110,
         leading: IconButton(
-            onPressed: () => widget.backRoute?.call(),
+            onPressed: () => reward_controller.showReward(),
             icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.white,
@@ -60,7 +59,7 @@ class _RewardDetailsState extends State<RewardDetails> {
                 itemCount: 5,
                 shrinkWrap: true,
                 itemBuilder: (context, index) => InkWell(
-                  onTap: () => widget.changeRoute?.call(),
+                  onTap: () => changeRoute?.call(),
                   child: const RewardDetailsCard(),
                 ),
               ),

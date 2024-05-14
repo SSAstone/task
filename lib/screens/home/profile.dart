@@ -3,7 +3,7 @@ import 'package:mobile_app/utitls/colors.dart';
 
 Widget Profile() {
   return Container(
-    margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 70),
+    margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 60),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

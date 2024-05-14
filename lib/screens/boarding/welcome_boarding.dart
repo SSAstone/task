@@ -12,6 +12,10 @@ class WelcomeBoarding extends StatefulWidget {
 }
 
 class WelcomBboardingState extends State<WelcomeBoarding> {
+
+  int currentIndex = 0;
+
+
   List<Map> boarding = [
     {
       'label': 'Welcome to\n Fundify!',

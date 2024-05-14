@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mobile_app/controllers/reward_layout_controller.dart';
 import 'package:mobile_app/utitls/colors.dart';
 
 class Gift extends StatefulWidget {
@@ -12,6 +13,9 @@ class Gift extends StatefulWidget {
 }
 
 class _GiftState extends State<Gift> {
+  final RewardLayoutController controller = Get.put(RewardLayoutController());
+
+
   String dropdownvalue = 'Item 1';
 
   var items = [
@@ -34,7 +38,7 @@ class _GiftState extends State<Gift> {
               color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
         ),
         leading: IconButton(
-          onPressed: () => Get.back(),
+          onPressed: () => controller.hidGift.call(),
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
         ),
       ),
@@ -46,7 +50,7 @@ class _GiftState extends State<Gift> {
           children: [
             Container(
               margin: const EdgeInsets.symmetric(vertical: 20),
-              child: Text(
+              child: const Text(
                 "₣200 gift card to popular retailers.",
                 style: TextStyle(color: AppColors.lightColor),
                 textAlign: TextAlign.start,

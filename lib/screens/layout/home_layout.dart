@@ -52,11 +52,11 @@ class HomeLayout extends StatelessWidget {
                     Column(
                       children: [
                         Profile(),
-                        SizedBox(height: 70),
+                        SizedBox(height: 20),
                         Expanded(
                           child: Container(
                             padding: const EdgeInsets.only(
-                                top: 180, left: 30, right: 30),
+                                top: 220, left: 30, right: 30),
                             width: double.infinity,
                             color: AppColors.darkColor,
                             child: ListView.builder(
@@ -141,7 +141,7 @@ class HomeLayout extends StatelessWidget {
                       ],
                     ),
                     Positioned(
-                      top: 150,
+                      top: 120,
                       left: 0,
                       right: 0,
                       child: Balance(changeRoute: controller.showTransferView),

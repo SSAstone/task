@@ -161,7 +161,10 @@ class _BalanceState extends State<Balance> {
             ],
           ),
         ),
-        Image.asset("assets/images/Line.png"),
+        Container(
+          margin: const EdgeInsets.symmetric(horizontal: 30),
+          child: Image.asset("assets/images/Line.png"),
+        ),
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 30),
           padding: const EdgeInsets.only(top: 16, right: 16),

@@ -14,4 +14,5 @@ class HomeLayoutController extends GetxController {
   void hiddenSelectView() => view.value = "transfer";
   void hiddenShowMoney() => view.value = "account";
   void hiddenConfirm() => view.value = "money";
+  void homeView() => view.value = "";
 }

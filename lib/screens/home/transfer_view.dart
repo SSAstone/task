@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:mobile_app/controllers/home_layout_controller.dart';
 // import 'package:get/get.dart';
 // import 'package:mobile_app/screens/enter_account.dart';
 import 'package:mobile_app/utitls/colors.dart';
 // import 'package:mobile_app/utitls/routers.dart';
 import 'package:mobile_app/widget/btn/primary_btn.dart';
 
-
-class TransferView extends StatefulWidget {
+class TransferView extends StatelessWidget {
   final VoidCallback? backRoute;
   final VoidCallback? changeRoute;
-  const TransferView({super.key, this.backRoute, this.changeRoute});
+  TransferView({super.key, this.backRoute, this.changeRoute});
 
-  @override
-  State<TransferView> createState() => _TransferViewState();
-}
-
-class _TransferViewState extends State<TransferView> {
+  final HomeLayoutController home_controller = Get.put(HomeLayoutController());
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +26,8 @@ class _TransferViewState extends State<TransferView> {
         centerTitle: true,
         leading: IconButton(
           onPressed: () {
-            widget.backRoute?.call();
+            // backRoute?.call();
+            home_controller.homeView();
             // Get.toNamed(Routers.homeView);
           },
           icon: const Icon(
@@ -51,7 +49,8 @@ class _TransferViewState extends State<TransferView> {
               PrimaryBtn(
                 title: "Fundify Account",
                 onTopPressed: () {
-                  widget.changeRoute?.call();
+                  // changeRoute?.call();
+                  home_controller.showAccount();
                   // Get.to(() => EnterAccount());
                 },
                 style: const {
@@ -91,7 +90,6 @@ class _TransferViewState extends State<TransferView> {
           ),
         ),
       ),
-      
     );
   }
 }

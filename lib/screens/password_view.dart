@@ -54,7 +54,7 @@ class _PasswordState extends State<Password> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 50,
+                height: 40,
               ),
               Image.asset(
                 "assets/images/Vector_2.png",
@@ -77,9 +77,9 @@ class _PasswordState extends State<Password> {
               GridView.count(
                 crossAxisCount: 3,
                 shrinkWrap: true,
-                padding: const EdgeInsets.only(left: 30, right: 30),
-                mainAxisSpacing: 10.0,
-                crossAxisSpacing: 10.0,
+                padding: const EdgeInsets.only(left: 40, right: 40),
+                mainAxisSpacing: 5.0,
+                crossAxisSpacing: 5.0,
                 children: List.generate(
                   12,
                   (index) => _buildNumberButton((index + 1).toString()),

@@ -7,4 +7,5 @@ class RewardLayoutController extends GetxController {
   void showGift() => view.value = "gift";
   void hidGift() => view.value = "details";
   void hidDetails() => view.value = "";
+  void showReward() => view.value = "";
 }
