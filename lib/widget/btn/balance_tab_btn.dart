@@ -25,7 +25,7 @@ class BalanceTabBtn extends StatelessWidget {
           child: const Row(
             children: [
               Icon(
-                Icons.account_balance_wallet_outlined,
+                Icons.account_balance_wallet_outlined, size: 16,
               ),
               SizedBox(width: 3),
               Text(
@@ -52,7 +52,7 @@ class BalanceTabBtn extends StatelessWidget {
             child: const Row(
               children: [
                 Icon(
-                  Icons.call_split_outlined,
+                  Icons.call_split_outlined,  size: 16
                 ),
                 SizedBox(width: 3),
                 InkWell(
@@ -79,7 +79,7 @@ class BalanceTabBtn extends StatelessWidget {
           child: const Row(
             children: [
               Icon(
-                Icons.more_horiz_outlined,
+                Icons.more_horiz_outlined,  size: 16
               ),
               SizedBox(width: 3),
               Text(

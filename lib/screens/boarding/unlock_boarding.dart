@@ -105,10 +105,10 @@ class _UnlockBoardingState extends State<UnlockBoarding> {
               ),
               Column(
                 children: [
-                  Image.asset("assets/images/Group_2.png", width: size.width * 0.8, height: size.height * 0.4),
+                  Image.asset("assets/images/Group_2.png", width: size.width * 0.8, height: size.height * 0.35),
                   const Text(
                     "Welcome to\n Fundify!",
-                    style: TextStyle(color: Colors.white, fontSize: 32),
+                    style: TextStyle(color: Colors.white, fontSize: 28),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(

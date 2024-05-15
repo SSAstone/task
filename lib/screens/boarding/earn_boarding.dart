@@ -105,14 +105,14 @@ class _EarnBoardingState extends State<EarnBoarding> {
 
                 child: Column(
                   children: [
-                    Image.asset("assets/images/Group.png", width: size.width * 0.8, height: size.height * 0.37),
+                    Image.asset("assets/images/Group.png", width: size.width * 0.8, height: size.height * 0.33),
                     const Text(
                       "Welcome to\n Fundify!",
-                      style: TextStyle(color: Colors.white, fontSize: 32),
+                      style: TextStyle(color: Colors.white, fontSize: 28),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
                     const Text(
                       "Empower your finances and earn rewards with every smart move.",
@@ -122,7 +122,7 @@ class _EarnBoardingState extends State<EarnBoarding> {
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 6),
               Container(
                 // padding: const EdgeInsets.only(bottom: 50),
                 child: Column(
@@ -131,7 +131,7 @@ class _EarnBoardingState extends State<EarnBoarding> {
                       title: 'Continue',
                       onTopPressed: () => Get.toNamed(Routers.unlockBoarding),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 2),
                     PrimaryBtn(
                       title: 'Back',
                       onTopPressed: () => Get.back(),

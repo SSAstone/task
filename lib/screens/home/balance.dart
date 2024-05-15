@@ -182,7 +182,7 @@ class _BalanceState extends State<Balance> {
                 children: [
                   Row(
                     children: [
-                      Image.asset("assets/images/Vector_3.png"),
+                      Image.asset("assets/images/Vector_3.png", width: 28),
                       const SizedBox(width: 5),
                       const Text(
                         "179,000 Points",

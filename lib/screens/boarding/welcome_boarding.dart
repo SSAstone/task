@@ -51,7 +51,7 @@ class WelcomBboardingState extends State<WelcomeBoarding> {
               Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(top: 50, bottom: 20),
+                    margin: const EdgeInsets.only(top: 50, bottom: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

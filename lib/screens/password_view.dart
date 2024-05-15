@@ -74,15 +74,18 @@ class _PasswordState extends State<Password> {
                 textAlign: TextAlign.center,
                 decoration: const InputDecoration(border: InputBorder.none),
               ),
-              GridView.count(
-                crossAxisCount: 3,
-                shrinkWrap: true,
-                padding: const EdgeInsets.only(left: 40, right: 40),
-                mainAxisSpacing: 5.0,
-                crossAxisSpacing: 5.0,
-                children: List.generate(
-                  12,
-                  (index) => _buildNumberButton((index + 1).toString()),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: GridView.count(
+                  crossAxisCount: 3,
+                  shrinkWrap: true,
+                  // padding: const EdgeInsets.only(left: 40, right: 40),
+                  mainAxisSpacing: 5.0,
+                  crossAxisSpacing: 5.0,
+                  children: List.generate(
+                    12,
+                    (index) => _buildNumberButton((index + 1).toString()),
+                  ),
                 ),
               ),
               Container(

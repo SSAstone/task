@@ -83,7 +83,7 @@ class _SelectAccountState extends State<SelectAccount> {
                                       "Shater Tsavsar",
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           fontWeight: FontWeight.normal),
                                     ),
                                     Text(
@@ -102,10 +102,10 @@ class _SelectAccountState extends State<SelectAccount> {
                               children: [
                                 Image.asset(
                                   "assets/images/Vector.png",
-                                  width: 17,
-                                  height: 23,
+                                  width: 15,
+                                  height: 20,
                                 ),
-                                SizedBox(width: 10,),
+                                SizedBox(width: 5,),
                                 const Text(
                                   "24,990 Points",
                                   style: TextStyle(
